@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hello 3D Maps in Maps JavaScript</title>
+
+    <style>
+        html,
+        body {
+          height:100%;
+          margin: 0;
+          padding: 0;
+        }
+        gmp-map-3d {
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+<gmp-map-3d mode="hybrid" center="37.841157, -122.551679" range="2000" tilt="75" heading="330"></gmp-map-3d>
+<script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCer1rNw1Ek5P2A0YlNkVMA1trVfIo0uq0&v=beta&libraries=maps3d"></script>
+<script>
+    // Ensure the map resizes if the window changes (especially in WebView)
+    window.addEventListener('resize', function() {
+        const map = document.querySelector('gmp-map-3d');
+        if(map) {
+            map.style.width = '100%';
+            map.style.height = '100%';
+        }
+    });
+</script>
+</body>
+</html>
